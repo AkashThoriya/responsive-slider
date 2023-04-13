@@ -26,7 +26,7 @@
 
     function updateSlideIndex(increment) {
         slideIndex += increment * slidesToShow;
-        if (slideIndex >= slides.length) {
+        if (slideIndex >= slides.length - slidesToShow) {
             slideIndex = 0;
             slider.style.transition = "none";
             slider.style.transform = `translateX(-${slideIndex * slideWidth}%)`;
@@ -42,7 +42,7 @@
     }
 
     function autoPlay() {
-        setInterval(nextSlide, 5000);
+        setInterval(nextSlide, 2000);
     }
 
     function onResize() {
